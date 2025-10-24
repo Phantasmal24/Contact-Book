@@ -69,7 +69,7 @@ def main():
         elif choice == "3":
             search_contact(contacts)
         elif choice == "4":
-            print("Goodbye!")
+            print("Exiting the application...")
             break
         else:
             print("Invalid Choice: Please try again.")
