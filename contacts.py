@@ -16,7 +16,7 @@ def save_contacts(contacts):
 
 def view_contacts(contacts):
     """Displays all contacts."""
-    print("\n--- Your Contacts ---")
+    print("\n=== Your Contacts ===")
     if not contacts:
         print("Your contact book is empty.")
     else:
