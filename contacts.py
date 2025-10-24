@@ -49,6 +49,17 @@ def search_contact(contacts):
     else:
         print(f"No contact found with this name '{search_name}'.\n")
 
+def delete_contact(contacts):
+    """Deletes a contact by name."""
+    search_name = input("Enter the name of the contact to delete: ")
+
+    if search_name in contacts:
+        del contacts[search_name]
+        save_contacts(contacts)
+        print(f"Contacts '{search_name}' has been deleted.")
+    else:
+        print(f"No contact found with the name '{search_name}'")
+
 def main():
     """Main function to run the contact book app."""
     contacts = load_contacts()
@@ -58,9 +69,10 @@ def main():
         print("1. View Contacts")
         print("2. Add a new Contact")
         print("3. Search for a contact")
-        print("4. Exit")
+        print("4. Delete a contact")
+        print("5. Exit")
 
-        choice = input("Enter your choice (1/2/3/4): ")
+        choice = input("Enter your choice (1/2/3/4/5): ")
 
         if choice == "1":
             view_contacts(contacts)
@@ -69,6 +81,8 @@ def main():
         elif choice == "3":
             search_contact(contacts)
         elif choice == "4":
+            delete_contact(contacts)
+        elif choice == "5":
             print("Exiting the application... See you later!")
             break
         else:
